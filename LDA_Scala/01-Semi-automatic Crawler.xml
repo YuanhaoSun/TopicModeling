@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process version="5.1.011">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="5.1.011" expanded="true" name="Process">
+    <process expanded="true" height="589" width="1284">
+      <operator activated="true" class="web:get_webpage" compatibility="5.1.004" expanded="true" height="60" name="Get Page" width="90" x="112" y="30">
+        <parameter key="url" value="http://www.bonniercorp.com/privacy_policy.html"/>
+        <parameter key="random_user_agent" value="true"/>
+        <list key="query_parameters"/>
+      </operator>
+      <operator activated="true" class="text:process_documents" compatibility="5.1.002" expanded="true" height="94" name="Process Documents" width="90" x="313" y="30">
+        <parameter key="create_word_vector" value="false"/>
+        <parameter key="keep_text" value="true"/>
+        <process expanded="true" height="589" width="614">
+          <operator activated="true" class="text:cut_document" compatibility="5.1.002" expanded="true" height="60" name="Cut Document" width="90" x="179" y="30">
+            <parameter key="query_type" value="XPath"/>
+            <list key="string_machting_queries"/>
+            <list key="regular_expression_queries"/>
+            <list key="regular_region_queries"/>
+            <list key="xpath_queries">
+              <parameter key="paragraph" value="//h:p"/>
+              <parameter key="list" value="//h:li"/>
+            </list>
+            <list key="namespaces"/>
+            <list key="index_queries"/>
+            <process expanded="true" height="673" width="1293">
+              <operator activated="true" class="web:extract_html_text_content" compatibility="5.1.004" expanded="true" height="60" name="Extract Content" width="90" x="380" y="30"/>
+              <operator activated="true" class="text:extract_length" compatibility="5.1.002" expanded="true" height="60" name="Extract Length" width="90" x="581" y="30"/>
+              <operator activated="true" class="text:tokenize" compatibility="5.1.002" expanded="true" height="60" name="Tokenize" width="90" x="715" y="165"/>
+              <operator activated="true" class="text:filter_stopwords_english" compatibility="5.1.002" expanded="true" height="60" name="Filter Stopwords (English)" width="90" x="849" y="75"/>
+              <connect from_port="segment" to_op="Extract Content" to_port="document"/>
+              <connect from_op="Extract Content" from_port="document" to_op="Extract Length" to_port="document"/>
+              <connect from_op="Extract Length" from_port="document" to_op="Tokenize" to_port="document"/>
+              <connect from_op="Tokenize" from_port="document" to_op="Filter Stopwords (English)" to_port="document"/>
+              <connect from_op="Filter Stopwords (English)" from_port="document" to_port="document 1"/>
+              <portSpacing port="source_segment" spacing="0"/>
+              <portSpacing port="sink_document 1" spacing="0"/>
+              <portSpacing port="sink_document 2" spacing="0"/>
+            </process>
+          </operator>
+          <connect from_port="document" to_op="Cut Document" to_port="document"/>
+          <connect from_op="Cut Document" from_port="documents" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="5.1.011" expanded="true" height="76" name="Filter Empty Rows" width="90" x="514" y="30">
+        <parameter key="condition_class" value="attribute_value_filter"/>
+        <parameter key="parameter_string" value="text != \w*"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="5.1.011" expanded="true" height="76" name="Filter Examples (2)" width="90" x="648" y="30">
+        <parameter key="condition_class" value="attribute_value_filter"/>
+        <parameter key="parameter_string" value="document_length &gt; 80"/>
+      </operator>
+      <operator activated="true" class="generate_id" compatibility="5.1.011" expanded="true" height="76" name="Generate ID" width="90" x="782" y="30"/>
+      <operator activated="true" class="write_excel" compatibility="5.1.011" expanded="true" height="60" name="Write Excel" width="90" x="983" y="30">
+        <parameter key="excel_file" value="D:\Desktop\documents.xls"/>
+      </operator>
+      <connect from_op="Get Page" from_port="output" to_op="Process Documents" to_port="documents 1"/>
+      <connect from_op="Process Documents" from_port="example set" to_op="Filter Empty Rows" to_port="example set input"/>
+      <connect from_op="Filter Empty Rows" from_port="example set output" to_op="Filter Examples (2)" to_port="example set input"/>
+      <connect from_op="Filter Examples (2)" from_port="example set output" to_op="Generate ID" to_port="example set input"/>
+      <connect from_op="Generate ID" from_port="example set output" to_op="Write Excel" to_port="input"/>
+      <connect from_op="Write Excel" from_port="through" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>
