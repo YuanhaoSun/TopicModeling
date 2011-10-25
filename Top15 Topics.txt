@@ -1,0 +1,172 @@
+======================================================
+Topic modeling using Gensim
+======================================================
+Topic modeling using Gensim library on the
+LDA, LSA, Similarities
+
+reading all files
+
+processing stop words
+done in 0.811000s
+
+preparing dictionary
+done in 1.121000s
+Dictionary(20113 unique tokens)
+
+preparing corpus
+done in 0.870000s
+
+serializing
+done in 0.846000s
+
+Dictionary(20113 unique tokens)
+MmCorpus(9825 documents, 20113 features, 176465 non-zero entries)
+
+transform to tfi-df
+done in 0.995000s
+
+LDA modeling
+done in 23.787000s
+
+Top15 topics:
+Topic 1
+0.040*third + 0.016*party + 0.015*parties + 0.015*use + 0.015*data + 0.014*secur
+ity + 0.010*protect + 0.009*share + 0.008*service + 0.008*provide
+
+Topic 2
+0.031*service + 0.021*use + 0.020*party + 0.018*third + 0.013*services + 0.011*t
+erms + 0.011*provide + 0.011*payment + 0.010*sns + 0.009*friends
+
+Topic 3
+0.021*contact + 0.018*regarding + 0.016*data + 0.015*questions + 0.015*use + 0.0
+13*website + 0.010*consent + 0.009*policy. + 0.009*policy, + 0.008*safe
+
+Topic 4
+0.030*provide + 0.013*services + 0.012*use + 0.012*content + 0.011*products + 0.
+010*users + 0.008*information. + 0.008*which + 0.007*third-party + 0.007*volunta
+rily
+
+Topic 5
+0.028*state + 0.022*address, + 0.017*name, + 0.015*credit + 0.015*number, + 0.01
+4*card + 0.014*provide + 0.013*financial + 0.013*use + 0.011*phone
+
+Topic 6
+0.016*profile + 0.015*measurement + 0.011*company, + 0.010*wall + 0.010*list + 0
+.010*shall + 0.010*customer + 0.009*truste + 0.009*send + 0.009*feedback
+
+Topic 7
+0.010*site's + 0.009*de + 0.009*album + 0.007*match + 0.007*game. + 0.007*van +
+0.007*fins + 0.007*icon + 0.006*en + 0.005*2010
+
+Topic 8
+0.015*request + 0.014*information, + 0.013*identifiable + 0.012*contact + 0.010*
+update + 0.010*customer + 0.010*use + 0.009*pii + 0.009*provide + 0.008*records
+
+Topic 9
+0.018*mobile + 0.018*u.s.a. + 0.017*house + 0.017*rights + 0.016*inc. + 0.015*of
+ficial + 0.011*2011 + 0.011*group + 0.010*included + 0.009*copyright
+
+Topic 10
+0.034*account + 0.026*access + 0.014*foundation + 0.013*user + 0.012*password +
+0.011*health + 0.011*registration + 0.010*credit + 0.009*registered + 0.008*into
+
+
+Topic 11
+0.032*use + 0.012*collect + 0.008*collected + 0.007*changes + 0.007*users + 0.00
+7*advertisements + 0.007*including + 0.006*children + 0.006*age + 0.006*site,
+
+Topic 12
+0.020*ip + 0.017*internet + 0.015*visit + 0.015*collect + 0.014*use + 0.012*addr
+ess + 0.012*pages + 0.011*browser + 0.011*automatically + 0.010*which
+
+Topic 13
+0.049*cookies + 0.026*use + 0.016*browser + 0.012*cookie + 0.010*cookies, + 0.00
+9*computer + 0.009*flash + 0.009*website + 0.009*help + 0.009*more
+
+Topic 14
+0.026*marketing + 0.018*business + 0.016*disclose + 0.016*companies + 0.014*law
++ 0.014*legal + 0.013*share + 0.013*york + 0.013*required + 0.011*necessary
+
+Topic 15
+0.028*white + 0.022*data + 0.015*act + 0.014*receiving + 0.013*receive + 0.012*o
+pt-out + 0.012*protection + 0.010*management + 0.010*collect + 0.008*option
+
+
+LSI modeling
+done in 5.985000s
+
+Top15 topics:
+Topic 1
+0.303*"use" + 0.218*"third" + 0.214*"collect" + 0.180*"provide" + 0.159*"cookies
+" + 0.143*"services" + 0.120*"data" + 0.118*"parties" + 0.116*"identifiable" + 0
+.115*"party"
+
+Topic 2
+0.687*"collect" + -0.413*"third" + -0.275*"parties" + 0.251*"use" + -0.184*"part
+y" + -0.131*"share" + 0.113*"cookies" + 0.075*"types" + -0.071*"disclosure" + -0
+.071*"marketing"
+
+Topic 3
+-0.534*"collect" + -0.459*"third" + -0.322*"parties" + 0.213*"cookies" + -0.187*
+"party" + -0.135*"share" + 0.132*"access" + 0.112*"browser" + 0.086*"contact" +
+-0.085*"disclosure"
+
+Topic 4
+0.510*"cookies" + 0.201*"third" + 0.189*"browser" + -0.163*"provide" + -0.159*"c
+ontact" + 0.147*"use" + -0.136*"security" + 0.125*"party" + -0.124*"identifiable
+" + -0.122*"protect"
+
+Topic 5
+-0.388*"security" + -0.352*"protect" + 0.202*"services" + 0.191*"provide" + -0.1
+81*"disclosure" + -0.177*"use" + 0.165*"products" + -0.155*"data" + 0.147*"addre
+ss," + 0.134*"contact"
+
+Topic 6
+0.573*"use" + 0.300*"collection" + -0.243*"security" + -0.198*"collect" + -0.178
+*"access" + 0.131*"changes" + -0.131*"protect" + -0.120*"credit" + -0.119*"third
+" + 0.118*"contact"
+
+Topic 7
+0.400*"identifiable" + 0.281*"provide" + -0.274*"changes" + -0.252*"contact" + -
+0.205*"collect" + -0.197*"questions" + 0.171*"use" + -0.162*"change" + -0.158*"u
+pdate" + -0.146*"policy,"
+
+Topic 8
+-0.539*"identifiable" + 0.271*"services" + 0.216*"products" + -0.180*"collected"
+ + -0.166*"children" + 0.151*"security" + 0.151*"data" + 0.150*"protect" + 0.146
+*"use" + -0.131*"age"
+
+Topic 9
+-0.292*"contact" + -0.225*"use" + -0.223*"address," + -0.209*"credit" + -0.199*"
+card" + -0.198*"collection" + -0.192*"questions" + -0.180*"number," + -0.179*"se
+curity" + -0.171*"name,"
+
+Topic 10
+0.349*"collected" + -0.339*"access" + -0.221*"changes" + -0.220*"use" + -0.218*"
+update" + 0.190*"data" + 0.179*"questions" + 0.174*"contact" + -0.155*"change" +
+ -0.140*"my"
+
+Topic 11
+0.299*"collected" + -0.286*"cookies" + -0.231*"identifiable" + 0.221*"access" +
+-0.182*"protect" + -0.160*"children" + 0.144*"ip" + 0.140*"site;" + 0.140*"addre
+ss" + 0.140*"automatically"
+
+Topic 12
+0.336*"disclosure" + -0.240*"security" + 0.225*"disclose" + -0.223*"identifiable
+" + -0.176*"access" + 0.170*"legal" + -0.155*"websites" + -0.152*"party" + 0.145
+*"required" + 0.138*"cookies"
+
+Topic 13
+-0.445*"access" + 0.388*"changes" + -0.189*"contact" + -0.180*"site;" + 0.161*"c
+redit" + 0.154*"card" + 0.138*"address," + -0.137*"disclosure" + -0.132*"update"
+ + -0.131*"questions"
+
+Topic 14
+-0.362*"collection" + -0.250*"marketing" + 0.247*"provide" + -0.234*"data" + 0.1
+97*"questions" + 0.183*"contact" + -0.155*"promotional" + 0.149*"rights" + -0.14
+1*"receive" + -0.134*"opt-out"
+
+Topic 15
+0.281*"changes" + 0.251*"provide" + 0.224*"share" + 0.205*"data" + -0.196*"right
+s" + -0.184*"children" + 0.179*"cookies" + -0.152*"disclosure" + -0.144*"age" +
+-0.143*"2011"

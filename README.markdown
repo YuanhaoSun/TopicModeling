@@ -6,6 +6,7 @@ This is the repo for all tests and developments using Python for topic modeling 
 List of Content
 ================================
 **01_test_clustering.py**- tests text clustering with scikit-learn clustering methods.<br>
+**02_lda_lsi_gensim.py**- topic modeling using LDA and LSI base on gensim library.<br>
 
 Warning: Below are just sample text for further usage.
 ================================
