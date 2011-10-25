@@ -118,7 +118,7 @@ print
 
 # print 10 topics by LDA
 # lsi.print_topics(10)
-print "Top10 topics:"
+print "Top15 topics:"
 topic_strings = lsi.show_topics(15)
 for i in xrange(15):
     print 'Topic', i+1
@@ -137,7 +137,7 @@ print
 
 # print 10 topics by LSI
 # lsi.print_topics(10)
-print "Top10 topics:"
+print "Top15 topics:"
 topic_strings = lsi.show_topics(15)
 for i in xrange(15):
     print 'Topic', i+1
